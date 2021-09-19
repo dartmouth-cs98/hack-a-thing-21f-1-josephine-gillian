@@ -43,7 +43,7 @@ public class GyroCamera : MonoBehaviour
 
 
 
-    void ResetGyroRotation()
+    public void ResetGyroRotation()
     {
         int x = Screen.width / 2;
         int y = Screen.height / 2;
