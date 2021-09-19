@@ -21,6 +21,7 @@ public class Pokeball : MonoBehaviour
 
     void Start()
     {
+        Debug.Log("HELLO FROM START");  
         _rigidbody = GetComponent<Rigidbody>();
 
         _rigidbody.maxAngularVelocity = curveAmount * 8f;
@@ -108,6 +109,7 @@ public class Pokeball : MonoBehaviour
         transform.localRotation = Quaternion.Euler(0f, 200f, 0f);
         transform.parent = Camera.main.transform;
 
+        missed = false;
     }
 
     void OnTouch()
@@ -126,6 +128,8 @@ public class Pokeball : MonoBehaviour
 
     void CalcCurveAmount()
     {
+        if (Input.touchCount == 0) return;
+
         Vector2 b = new Vector2(lastMouseX, lastMouseY);
         Vector2 c = Input.GetTouch(0).position;
         Vector2 a = circlingBox.center;
@@ -164,5 +168,49 @@ public class Pokeball : MonoBehaviour
         Invoke("Reset", 5.0f);
 
 
+    }
+
+    bool missed = false;
+
+    void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("HIT anything");
+        if (collision.transform.tag == "Pokemon")
+        {
+            Debug.Log("HIT");
+            GameObject pokemon = collision.transform.gameObject;
+            StartCoroutine(CatchingPhase(1f, pokemon));
+        }
+        else if (collision.transform.tag != "Pokemon") {
+            missed = true;
+        }
+    }
+
+    IEnumerator CatchingPhase(float chance, GameObject pokemon)
+    {
+        bool caught = (Random.Range(0, 1) < chance);
+
+        pokemon.SetActive(false);
+
+        _rigidbody.AddForce(Vector3.up * 2.0f);
+        yield return new WaitForSeconds(0.25f);
+        _rigidbody.isKinematic = true;
+        _rigidbody.velocity = Vector3.zero;
+        _rigidbody.angularVelocity = Vector3.zero;
+        yield return new WaitForSeconds(0.25f);
+        _rigidbody.isKinematic = false;
+        yield return new WaitForSeconds(2f);
+        if (caught)
+        {
+            Debug.Log("CAPTURED!!");
+            yield break;
+        }
+        else {
+            Debug.Log("ESCAPED!!");
+        }
+
+        pokemon.SetActive(true);
+
+        yield break;
     }
 }
