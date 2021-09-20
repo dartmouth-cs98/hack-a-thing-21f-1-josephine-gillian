@@ -5,6 +5,14 @@
 
 A minimalist version of Pokemon GO!, with a Map scene where a number of Pokemons spawn randomly at fixed time intervals, and a Catch scene with ball throwing and curved throwing mechanisms to catch the Pokemon. The game also keeps track of how many Pokemons the user has caught.
 
+Map scene:
+
+![MapScene](https://user-images.githubusercontent.com/50053540/134088301-cfbf7429-dccb-4d36-b443-b4537c05c66b.PNG)
+
+Catch scene:
+
+![CatchScene](https://user-images.githubusercontent.com/50053540/134088295-893a412c-1e46-4248-b777-162cd486f2e0.png)
+
 ## Who Did What?
 
 We followed the tutorial series together in the same room, but Gillian handled the coding for the first half of the tutorial (videos 1-5), and Josephine handled the remaining videos.
