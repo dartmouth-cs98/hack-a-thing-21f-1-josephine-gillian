@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Pokeball : MonoBehaviour
 {
@@ -19,9 +20,9 @@ public class Pokeball : MonoBehaviour
     private float curveAmount = 0f, curveSpeed = 2f, minCurveAmountToCurveBall = 1f, maxCurveAmount = 2.5f;
     private Rect circlingBox;
 
+
     void Start()
     {
-        Debug.Log("HELLO FROM START");  
         _rigidbody = GetComponent<Rigidbody>();
 
         _rigidbody.maxAngularVelocity = curveAmount * 8f;
@@ -203,6 +204,13 @@ public class Pokeball : MonoBehaviour
         if (caught)
         {
             Debug.Log("CAPTURED!!");
+            if (PlayerPrefs.HasKey("SCORE"))
+            {
+                print("scoreeeeeeee: " + PlayerPrefs.GetInt("SCORE"));
+                PlayerPrefs.SetInt("SCORE", PlayerPrefs.GetInt("SCORE") + 1);
+            }
+            yield return new WaitForSeconds(0.25f);
+            SceneManager.LoadScene("MapScene");
             yield break;
         }
         else {

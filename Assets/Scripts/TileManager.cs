@@ -16,11 +16,23 @@ public class TileManager : MonoBehaviour
     private Texture2D texture;
     private GameObject tile;
 
-    [SerializeField]
-    private GameObject service;
-
     private float oldLat, oldLon;
     private float lat, lon;
+
+    public float getLat
+    {
+        get {
+            return lat;
+        }
+    }
+
+    public float getLon
+    {
+        get
+        {
+            return lon;
+        }
+    }
 
     IEnumerator Start()
     {
@@ -193,8 +205,8 @@ public class TileManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        service.SetActive(!Input.location.isEnabledByUser);
-        target.position = Vector3.Lerp(target.position, new Vector3(0, 0.25f, 0), 2.0f * Time.deltaTime);
+        // service.SetActive(!Input.location.isEnabledByUser);
+      //  target.position = Vector3.Lerp(target.position, new Vector3(0, 0.25f, 0), 2.0f * Time.deltaTime);
     }
 
     [Serializable]
