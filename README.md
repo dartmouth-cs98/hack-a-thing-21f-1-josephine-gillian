@@ -7,7 +7,7 @@ A minimalist version of Pokemon GO!, with a Map scene where a number of Pokemons
 
 Map scene:
 
-![MapScene](https://user-images.githubusercontent.com/50053540/134088301-cfbf7429-dccb-4d36-b443-b4537c05c66b.PNG)
+![MapScene](https://user-images.githubusercontent.com/50053540/134088863-7b169c8b-5cb6-47e2-a6c4-7962d4264235.PNG)
 
 Catch scene:
 
