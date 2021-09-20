@@ -21,7 +21,7 @@ We followed the tutorial series together in the same room, but Gillian handled t
 
 We were able to follow most of the tutorial series. In this process, we learned the basics of using Unity to create an AR game application, spawning 3D models based on the phone device's gyroscope, using basic Unity physics in an AR context, and importing 3D models into Unity.
 
-However, The MapBox API as done in the video tutorials did not work for us because it is deprecated. We tried to use the updated MapBox SDK for Unity, but we decided that the focus of the tutorial is the gameplay rather than the map. So, we used a static map .PNG of Dartmouth's campus and spawned Pokemons on it. Additionally, we had to use work-arounds to achieve some steps in the tutorials because of deprecation or omission from the video.
+However, The MapBox API as done in the video tutorials did not work for us because it is deprecated. We tried to use the updated MapBox SDK for Unity, but we decided that the focus of the tutorial is the gameplay rather than the map. So, we used a static map .PNG of Dartmouth's campus and spawned Pokemons on it. Additionally, sometimes we had to use small work-arounds to achieve some steps in the tutorials because of deprecation or omission from the video.
 
 We also found out that it was quite difficult to find free, compatible 3D Pokemon models for our project, so we ended up using only 2 models (Pokeball and Pikachu), which still kept the spirit of the game. For the final video, since we only used 1 Pokemon type, we decided to use the knowledge we had acquired and completed our own version of user data/score tracking.
 
